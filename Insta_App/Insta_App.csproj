@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B79D0495-DA5A-40ED-B2D5-60D20CB63AF7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Insta_App</RootNamespace>
+    <AssemblyName>Insta_App</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Caliburn.Micro, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.Core.3.2.0\lib\net45\Caliburn.Micro.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro.Platform, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\Caliburn.Micro.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro.Platform.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\Caliburn.Micro.Platform.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Animation\PageAnimation.cs" />
+    <Compile Include="Animation\PageAnimations.cs" />
+    <Compile Include="Animation\StoryboardHelpers.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\PageHost.xaml.cs">
+      <DependentUpon>PageHost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\ApplicationPage.cs" />
+    <Compile Include="Pages\BasePage.cs" />
+    <Compile Include="ValueConverters\ApplicationPageValueConverter.cs" />
+    <Compile Include="ValueConverters\BaseValueConverter.cs" />
+    <Compile Include="ViewModels\CalendarPageViewModel.cs" />
+    <Compile Include="ViewModels\InstagramPageViewModel.cs" />
+    <Compile Include="ViewModels\ShellViewModel.cs" />
+    <Compile Include="ViewModels\TelephonePageViewModel.cs" />
+    <Compile Include="Views\CalendarPageView.xaml.cs">
+      <DependentUpon>CalendarPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InstagramPageView.xaml.cs">
+      <DependentUpon>InstagramPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShellView.xaml.cs">
+      <DependentUpon>ShellView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TelephonePageView.xaml.cs">
+      <DependentUpon>TelephonePageView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Resource Include="Fonts\SFUIText-Bold.ttf" />
+    <Resource Include="Fonts\SFUIText-BoldItalic.ttf" />
+    <Resource Include="Fonts\SFUIText-Heavy.ttf" />
+    <Resource Include="Fonts\SFUIText-HeavyItalic.ttf" />
+    <Resource Include="Fonts\SFUIText-Light.ttf" />
+    <Resource Include="Fonts\SFUIText-LightItalic.ttf" />
+    <Resource Include="Fonts\SFUIText-Medium.ttf" />
+    <Resource Include="Fonts\SFUIText-MediumItalic.ttf" />
+    <Resource Include="Fonts\SFUIText-Regular.ttf" />
+    <Resource Include="Fonts\SFUIText-RegularItalic.ttf" />
+    <Resource Include="Fonts\SFUIText-Semibold.ttf" />
+    <Resource Include="Fonts\SFUIText-SemiboldItalic.ttf" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\PageHost.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CalendarPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InstagramPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ShellView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TelephonePageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Eng_Language.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Rectangle 23Info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Group 35Info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Rectangle 25YourPhotosRect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Ellipse 5YourPhotosEllipse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Vector 12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Vector 11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Btn_Inst.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Btn_Inst %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Btn_Phone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Btn_Calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Btn_Cards.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Insta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RectangleInstagram_Background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Group %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Search Glyph.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Group %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Rectangle %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Group 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Group %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Group 28.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Rectangle %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Печать фото.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Найди фото в инстаграм.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Btn_Inst %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Rectangle %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Rectangle %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Rectangle 28.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Vector 16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Mask Group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Rectangle %286%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Rectangle %287%29.png" />
+    <Resource Include="Images\Rectangle %288%29.png" />
+    <Resource Include="Images\Rectangle %289%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Btn_Calendar %281%29.png" />
+    <Resource Include="Images\Btn_Cards %282%29.png" />
+    <Resource Include="Images\Btn_Inst %283%29.png" />
+    <Resource Include="Images\Btn_Phone %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Group 5.1.png" />
+    <Resource Include="Images\Group 5.2.png" />
+    <Resource Include="Images\Group 5.3.png" />
+    <Resource Include="Images\Group 5.4.png" />
+    <Resource Include="Images\Group 5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Rectangle %2810%29.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,36 @@
+﻿<pages:BasePage x:Class="Insta_App.Views.TelephonePageView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Insta_App.Views"
+      xmlns:pages="clr-namespace:Insta_App.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="1920" d:DesignWidth="1080"
+      Title="TelephonePageView">
+    <Page.Background>
+        <ImageBrush ImageSource="../Images/Rectangle (4).png"></ImageBrush>
+    </Page.Background>
+    <Grid>
+        <Rectangle HorizontalAlignment="Left" Height="573" Margin="314.81,284.76,0,0" VerticalAlignment="Top" Width="382.95">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="../Images/Group (3).png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="111.53" Margin="279.54,819.52,0,0" VerticalAlignment="Top" Width="558.4">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="../Images/Group 28.png"/>
+            </Rectangle.Fill>
+
+        </Rectangle>
+        <TextBlock HorizontalAlignment="Left" Height="196.79" Margin="246.58,975.65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="635.38" Foreground="White" FontSize="76" TextAlignment="Center" IsEnabled="False" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-2.51"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="Печать фото "/><LineBreak/><Run Text="с телефона"/></TextBlock>
+    </Grid>
+</pages:BasePage>
